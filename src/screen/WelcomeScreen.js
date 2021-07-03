@@ -8,7 +8,8 @@ import {
   ImageBackground,
 } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import Color from '../theme/Color';
+import Colors from '../theme/Colors';
+import AppBar from '../components/AppBar';
 
 const slides = [
   {
@@ -48,8 +49,8 @@ class WelcomeScreen extends Component {
     );
   };
   _onDone = () => {
-    //this.props.navigation.replace('your screen');
-    alert('done clicked');
+    this.props.navigation.replace('Home');
+
   };
   _renderNextButton = () => {
     return (
@@ -68,11 +69,7 @@ class WelcomeScreen extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <StatusBar
-          translucent
-          backgroundColor={Color.transparent}
-          barStyle="light-content"
-        />
+        <AppBar/>
         <AppIntroSlider
           renderItem={this._renderItem}
           data={slides}
@@ -97,32 +94,32 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'flex-end',
     paddingBottom: 100,
-    backgroundColor: Color.white,
+    backgroundColor: Colors.white,
   },
   text: {
-    color: Color.graylight,
+    color: Colors.graylight,
     textAlign: 'center',
   },
   title: {
     fontSize: 22,
-    color: Color.gray,
+    color: Colors.gray,
     textAlign: 'center',
   },
   dots: {
-    backgroundColor: Color.gray,
+    backgroundColor: Colors.gray,
   },
   activeDots: {
-    backgroundColor: Color.colorPrimary,
+    backgroundColor: Colors.colorPrimary,
   },
   next: {
     fontSize: 14,
     fontWeight: '700',
-    color: Color.gray,
+    color: Colors.gray,
   },
   done: {
     fontSize: 14,
     fontWeight: '700',
-    color: Color.colorPrimaryDark,
+    color: Colors.colorPrimaryDark,
   },
 });
 

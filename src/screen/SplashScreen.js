@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import Color from '../theme/Color';
-import AppStatusBar from '../components/AppStatusBar';
 import {getUserDetails} from '../utils/LocalStorage';
+import AppBar from '../components/AppBar';
 
 class SplashScreen extends Component {
   constructor(props) {
@@ -38,19 +37,11 @@ class SplashScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <AppStatusBar
-          backgroundColor="rgba(0,0,0,0)"
-          barStyle="dark-content"
-          visibleStatusBar={false}
-          translucent
-        />
+        <AppBar/>
         <Image
           style={styles.logo}
           source={require('../assets/images/logo.png')}
         />
-        {/* <View style={styles.bottomImage}>
-          <Image source={require('../assets/images/thumb1.png')} />
-        </View> */}
       </View>
     );
   }

@@ -1,6 +1,6 @@
-import Color from './Color';
+import Colors from './Colors';
 import Fonts from './Fonts';
 import Strings from './Strings';
-import Dimension from './Dimension';
+import Dimensions from './Dimensions';
 
-export {Color, Fonts, Strings, Dimension};
+export {Colors, Fonts, Strings, Dimensions};

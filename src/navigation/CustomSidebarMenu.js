@@ -12,9 +12,9 @@ import {
   StatusBar,
 } from 'react-native';
 import Icon from 'react-native-feather1s';
-import Color from '../theme/Color';
-import Font from '../theme/Fonts';
-import Strings from '../theme/Strings';
+import Colors from '../theme/Colors';
+import Fonts from '../theme/Fonts';
+import Strings from '../theme/Strings';``
 import {getUserDetails, logout} from '../utils/LocalStorage';
 import {act} from 'react-test-renderer';
 
@@ -146,7 +146,7 @@ export default class CustomSidebarMenu extends Component {
                     item.screenToNavigate,
                   )
                     ? '#F7F7F7'
-                    : Color.white,
+                    : Colors.white,
                 }}
                 key={key}>
                 <View style={{marginRight: 15, marginLeft: 20}}>
@@ -155,7 +155,7 @@ export default class CustomSidebarMenu extends Component {
                     size={22}
                     color={
                       this.getActiveRouteState(item.screenToNavigate)
-                        ? Color.colorPrimary
+                        ? Colors.colorPrimary
                         : '#808080'
                     }
                   />
@@ -164,7 +164,7 @@ export default class CustomSidebarMenu extends Component {
                   style={{
                     fontSize: 15,
                     color: this.getActiveRouteState(item.screenToNavigate)
-                      ? Color.colorPrimary
+                      ? Colors.colorPrimary
                       : 'black',
                   }}
                   onPress={() => {
@@ -222,8 +222,8 @@ const styles = StyleSheet.create({
     borderRadius: 50 / 2,
   },
   title: {
-    fontFamily: Font.primarySemiBold,
-    color: Color.white,
+    fontFamily: Fonts.primarySemiBold,
+    color: Colors.white,
     fontSize: 16,
     marginLeft: 10,
   },
@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: Color.iconBGd,
+    backgroundColor: Colors.iconBGd,
     paddingLeft: 20,
     paddingRight: 20,
   },
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 10,
     paddingBottom: 10,
-    backgroundColor: Color.colorPrimary,
+    backgroundColor: Colors.colorPrimary,
     display: 'flex',
   },
 });

@@ -46,51 +46,6 @@ export const setUserDetails = user => {
     AsyncStorage.setItem(USER_DETAILS, JSON.stringify(user));
 };
 
-export const getCart = async () => {
-    try {
-        let cartDetails = await AsyncStorage.getItem(CART);
-        cartDetails = JSON.parse(cartDetails);
-        return cartDetails;
-    } catch (error) {
-        console.log('Error fetching', error);
-        return null;
-    }
-};
-
-export const setCart = cart => {
-    AsyncStorage.setItem(CART, JSON.stringify(cart));
-};
-
-export const getProductItem = async () => {
-    try {
-        let productDetails = await AsyncStorage.getItem(PRODUCTITEM);
-        productDetails = JSON.parse(productDetails);
-        return productDetails;
-    } catch (error) {
-        console.log('Error fetching', error);
-        return null;
-    }
-};
-
-export const setWishlist = product => {
-    AsyncStorage.setItem(WISHLIST, JSON.stringify(product));
-};
-
-export const geWishlist = async () => {
-    try {
-        let wishlist = await AsyncStorage.getItem(WISHLIST);
-        wishlist = JSON.parse(wishlist);
-        return wishlist;
-    } catch (error) {
-        console.log('Error fetching wishlist', error);
-        return null;
-    }
-};
-
-export const setProductItem = productItem => {
-    AsyncStorage.setItem(PRODUCTITEM, JSON.stringify(productItem));
-};
-
 export const logout = async () => {
     try {
         await AsyncStorage.clear();

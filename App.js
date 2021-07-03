@@ -5,6 +5,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from './src/screen/SplashScreen';
 import WelcomeScreen from './src/screen/WelcomeScreen';
+import HomeScreen from './src/screen/HomeScreen';
 import CustomSidebarMenu from './src/navigation/CustomSidebarMenu';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -28,10 +29,8 @@ class App extends Component {
   createDrawer = () => (
     <Drawer.Navigator
       initialRouteName="Home"
-      contentOptions={(activeTintColor = 'red')}
       drawerContent={props => <CustomSidebarMenu {...props} />}>
       <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Profile" component={ProfileScreen} />
     </Drawer.Navigator>
   );
 
@@ -53,6 +52,7 @@ class App extends Component {
         animationEnabled: false,
       }}>
       <RootStack.Screen name="Main" component={this.MainStackScreen} />
+      <RootStack.Screen name="Home" children={this.createDrawer} />
     </RootStack.Navigator>
   );
   componentDidMount = async () => {
