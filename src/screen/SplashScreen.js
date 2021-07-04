@@ -24,12 +24,12 @@ class SplashScreen extends Component {
     if (data !== null) {
       if (user !== null) {
         if (user.phone_verified) {
-          this.props.navigation.replace('HomeScreen');
+          this.props.navigation.replace('Home');
         } else {
           this.props.navigation.replace('Login');
         }
       } else {
-        this.props.navigation.replace('WelcomeScreen');
+        this.props.navigation.replace('Home');
       }
     }
   }
