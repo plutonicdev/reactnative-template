@@ -6,11 +6,14 @@ const STYLES = ['default', 'dark-content', 'light-content'];
 const TRANSITIONS = ['fade', 'slide', 'none'];
 
 const AppBar=(props)=>{
+
+    const BackgroundColor = props.translucent?Colors.transparent:Colors.colorPrimaryDark;
+
     return(
         <StatusBar
             animated={props.animated?true:false}
-            backgroundColor={props.backgroundColor?props.backgroundColor:Colors.colorPrimaryDark}
-            barStyle={props.statusBarStyle?props.statusBarStyle:STYLES[1]}
+            backgroundColor={props.backgroundColor?props.backgroundColor:BackgroundColor}
+            barStyle={props.statusBarStyle?props.statusBarStyle:STYLES[0]}
             showHideTransition={props.transition?props.transition:TRANSITIONS[0]}
             hidden={props.hidden?true:false}
             translucent={props.translucent?true:false}
